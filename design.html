@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <!-- Meta info -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster Design</title>
+    <meta content="" name="description">
+    <meta name="author" content="">
+    <meta name="format-detection" content="">
+
+    <!-- Styles -->
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+    <link href="styles/main.css" rel="stylesheet" media="screen, print" type="text/css">
+    <script src="lib/modernizr-2.6.2.js"></script>
+    <link rel="stylesheet" href="http://bootswatch.com/4/flatly/bootstrap.min">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet"  href="styles/bootstrap.min.css">
+</head>
+<body>
+    <div id="container">
+        <section id="content">
+            
+<header>
+    <div id="pfd">
+        <a href="index.html">
+            <img src="images/logo.png" alt="Home">
+        </a>
+    </div>
+    
+    <div id="preamble">
+            <nav class="navbar navbar-dark bg-info mb-5">
+  <div class="container">
+    <a href="#" class="navbar-brand">Tạo poster</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 m-auto">
+      <div class="custom-file mb-3">
+        <input type="file" class="custom-file-input" id="upload-file">
+        <label for="upload-file" class="custom-file-label">Chọn ảnh</label>
+      </div>
+      <canvas id="canvas"></canvas>
+       <h4 class="text-center my-3">Logos</h4>
+    
+       <div class="row mb-3">
+         <div class="col-md-3">
+          <img src="https://image.freepik.com/free-vector/apple-tree-logo-design_1025-935.jpg" width="100" height="100" >
+        </div>
+        <div class="col-md-3">
+          <img src="https://img.freepik.com/free-vector/colorful-gradient-abstract-logo_23-2148432723.jpg?size=338&ext=jpg&uid=A" width="100" height="100">
+        </div>
+        <div class="col-md-3">
+          <img src="https://image.freepik.com/free-vector/vegan-friendly-leaves-label-green-color_1017-25452.jpg" width="100" height="100">
+        </div>
+        <div class="col-md-3">
+          <img src="https://image.freepik.com/free-vector/pencil-leaf-logo_96485-140.jpg" width="100" height="100">
+        </div>
+      </div>
+       <div class="row mb-3">
+         <div class="col-md-3">
+          <img src="https://image.freepik.com/free-vector/fairy-bird-abstract-logo-vector-icon_126523-268.jpg" width="100" height="100">
+        </div>
+        <div class="col-md-3">
+          <img src="https://image.freepik.com/free-vector/abstract-silhouette-sport-logo-flat-design_23-2148216854.jpg" width="100" height="100">
+        </div>
+        <div class="col-md-3">
+          <img src="https://image.freepik.com/free-vector/logo-template-coffee-business-design_23-2148512021.jpg" width="100" height="100">
+        </div>
+        <div class="col-md-3">
+          <img src="https://image.freepik.com/free-vector/logo-template-coffee-shop_23-2148512023.jpg" width="100" height="100">
+        </div>
+      </div>      
+        <!--color-->
+        <div class="row mb-3">
+          <div class="col-md-3">
+           <select id="slct1" name="slct1" onchange="applyText(this.id,'slct2','slct3','slct4','slct5')">
+             <option value=" " >Color</option>
+             <option value="white" >White</option>
+             <option value="green">Green</option>
+             <option value="blue" >Blue</option>
+             <option value="yellow" >yellow</option>
+             <option value="red">red</option>>
+           </select>
+          </div>
+          <!--size-->
+          <div class="col-md-3">
+           <select id="slct3" name="slct3" onchange="applyText('slct1','slct2',this.id,'slct4','slct5')">
+             <option value="35" >10</option>
+             <option value="40" >11</option>
+             <option value="46" >12</option>
+             <option value="50" >13</option>
+             <option value="55" >14</option>
+           </select>
+          </div>
+           <!--font-->
+          <div class="col-md-3">
+           <select id="slct2" name="slct2" onchange="applyText('slct1',this.id,'slct3','slct4','slct5')">
+             <option value="Arial" >Arial</option>
+             <option value="Verdana">Verdana</option>
+           </select>
+          </div>
+          <div class="col-md-3">
+          <select id="slct4" name="slct4" onchange="applyText('slct1','slct2','slct3',this.id,'slct5')">
+             <option value="center" >Center</option>
+             <option value="left" >Left</option>
+             <option value="right">Right</option>
+           </select>
+          </div>
+          <div class="col-md-3">
+          <select id="slct5" name="slct5" onchange="applyText('slct1','slct2','slct3','slct4',this.id)">
+             <option value="normal" >Normal</option>
+             <option value="italic" >Italic</option>
+             <option value="bold">Bold</option>
+           </select>
+          </div>
+
+
+
+          <!--Size-->
+        </div>
+        <div class="row mb-3">
+        <div class="col-md-3">
+          <input type="text" id="message" placeholder="Nhap text" >
+        </div>
+      </div>
+
+       <div class="row mt-5">
+        <div class="col-md-6">
+          <button id="save-btn" class="btn btn-primary btn-block" onclick="">Lưu</button>
+        </div>
+         <div class="col-md-6">
+      </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <button id="download-btn" class="btn btn-primary btn-block">Tải hình ảnh về </button>
+        </div>
+        <div class="col-md-6">
+          <button id="revert-btn" class="btn btn-danger btn-block" onclick="">Xóa hiệu ứng </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</header>
+
+         <footer id="msf">
+            <div class="wrapper">
+                <div id="legal">
+                  <span>Best Web Design<br>Hồ Xuân Phái &copy; 2020 </span>
+                </div>
+                
+            </div><!-- wrapper -->
+        </footer><!-- footer -->
+    </div><!-- container -->
+    <nav id="toc">
+         <ul>
+            <li>
+                <a class="active" href="index.html">Trang chủ </a></li>
+            <li>
+                <a href="gallery2.html ">Thư viện.</a></li>
+            <li>
+                <a href="design.html">Tạo Poster</a></li>
+        </ul>
+  </nav>
+    <script src="scripts/ajax/jquery-1.11.0.min.js"></script>
+    <script src="scripts/pyaari-main.1.0.js"></script>
+    <script src="scripts/pyaari-menu.1.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            PfdMenu._ctor();
+        });
+    </script>
+    
+
+    <script>
+      $(document).ready(function(){
+         ReadMore.init();
+      })
+    </script>
+    <script src="scripts/caman.full.min.js"></script>
+    <script src="scripts/main2.js"></script>
+
+</body>
+</html>
